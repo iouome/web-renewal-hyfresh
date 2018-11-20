@@ -1,0 +1,911 @@
+﻿<!DOCTYPE HTML>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="google-translate-customization" content="6f1073ba568f1202-9c8990a4b3025b3e-ga74e3ea243d3f01d-14"></meta> <!-- 세계 언어 선택 메타 태그 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="Generator" content="Notepad++"/>
+	<meta name="Author" content="손혜림"/>
+	<meta name="keywords" content="eats on" />
+	<meta name="Description" content="eats on 메인 페이지에 오신 것을 환영합니다"/>
+	<link rel="shortcut icon" href="img/icon.png"> <!-- 파비콘 -->
+	<title>Eats On</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script> <!-- 제이쿼리 라이브러리 연동 -->
+	<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script> 
+	<script type="text/javascript" src="js/swipe.js"></script> <!-- 터치 슬라이드 플러그인 연동 -->
+	<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>  <!-- bxSlider 플러그인 연동 -->
+	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script> <!-- UI 플러그인 연동 -->
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>  <!-- 쿠키 플러그인 연동 -->
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="js/DB_springMove_fn.js"></script>	
+	
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script src="js/map.js"></script>
+<style>
+	#map-canvas{width: 450px; height: 222px; margin-top: 1px; background-color: #ffffff; border: 1px solid #e0e0e0;}
+</style>
+	
+</head>
+<body>
+	<div id="wrap">
+		<div id="top_event">
+			<div class="event">
+				<div class="close_btn"></div>
+			</div>
+		</div>
+		<div id="header">
+			<h1><a href="#"><img src="img/logo.png" alt="잇츠온" /></a></h1>
+			<dl id="util_menu">
+				<dt class="hide">유틸메뉴</dt>
+				<dd class="appDownload fl">
+					<ul>
+						<li><a href="#">잇츠온 앱 다운로드 ▼</a></li>
+					</ul>
+				</dd>
+				<!-- <dd class="clickme fl DB_etc10_1" style="width: 128px;"><img src="img/login_click.png"/></dd> -->
+				<dd class="util_first">
+					<ul>
+						<li class="login_wrap logtxt"><a href="#">로그인</a>
+							<form action="#" method="post" name="log_f" id="login_f">
+								<fieldset>
+									<legend>로그인</legend>
+									<p class="user_id">
+										<label for="user_id">
+											<img src="img/login_title_id.gif" alt="아이디" />
+										</label>
+										<input type="text" name="user_id" id="user_id"/>
+									</p>
+									<p class="user_pw">
+										<label for="user_pw">
+											<img src="img/login_title_pw.gif" alt="패드워드" />
+										</label>
+										<input type="password" name="user_pw" id="user_pw"/>
+									</p>
+									<p>
+										<input type="checkbox" name="save_id" id="save_id"/>
+										<label for="save_id">비밀번호 저장</label>
+									</p>
+									<p class="log_btn">
+										<input type="image" src="img/login_btn.png" alt="로그인버튼" />
+									</p>
+									<p class="join_btn_wrap">
+										<a href="#">회원가입</a>
+										<a href="#" class="sch_id_btn">아이디/비밀번호찾기</a>
+									</p>
+									<p class="login_close_btn">
+										<a href="#"><img src="img/login_close_btn.png" alt="닫기버튼" /></a>
+									</p>
+								</fieldset>
+							</form>						
+						</li>
+						<li class="logtxt"><a href="#">|&nbsp;&nbsp;&nbsp;회원가입</a></li>
+					</ul>
+				</dd>
+				<dd class="mypage fl">
+					<ul>
+						<li><a href="#">|&nbsp;&nbsp;&nbsp;마이페이지 ▼</a></li>
+					</ul>
+				</dd>
+				<dd class="info fl">
+					<ul>
+						<li><a href="#">|&nbsp;&nbsp;&nbsp;고객센터 ▼</a></li>
+					</ul>
+				</dd>
+				<dd>
+					<a href="#">|&nbsp;&nbsp;&nbsp;멤버십몰</a>
+				</dd>
+				<dd>
+					<a href="#">|&nbsp;&nbsp;&nbsp;빠른제품신청</a>
+				</dd>
+				<dd>
+					<a href="#">|&nbsp;&nbsp;&nbsp;장바구니</a>
+				</dd>
+				<dd class="pt">
+					<ul id="zoom">
+						<li><img src="img/util_zoom_1.gif" alt="" /></li>
+						<li><a href="#" class="zoom_in"><img src="img/util_zoom_2.gif" alt="" /></a></li>
+						<li><a href="#" class="zoom_in"><img src="img/util_zoom_3.gif" alt="" /></a></li>
+						<li><a href="#" class="zoom_out"><img src="img/util_zoom_4.gif" alt="" /></a></li>
+					</ul>
+				</dd>
+				<dd class="pt">
+					<a href="#" class="print_btn"><img src="img/util_print.gif" alt="" /></a>
+				</dd>
+				<dd class="pt">
+	<div id="google_translate_element"></div><script type="text/javascript">
+	function googleTranslateElementInit() {
+	  new google.translate.TranslateElement({pageLanguage: 'ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+	}
+	</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>		
+				</dd>
+			</dl>
+			<div class="util_border"></div>
+			<form action="#" method="get" name="sch_f" id="sch_f">
+				<fieldset>
+					<legend>검색폼</legend>
+					<p>
+						<input type="text" name="keyword" id="keyword" title="검색어입력" />
+						<input type="image" src="img/search-button.png" alt="검색" class="sch_btn"/>
+					</p>
+				</fieldset>
+			</form>
+			<div class="right_banner">
+				<a href="#"><img src="img/main_slogan_eatson.gif" alt="잇츠온 주문배송 가능지역" /></a>
+				<a href="#"><img src="img/banner01.jpg" alt="이유식" /></a>
+			</div>
+			<div id="gnb_wrap">
+				<ul id="gnb">
+					<li>
+						<a href="#">국·찌개</a>
+						<ul class="sub1">
+							<li><a href="#">찌개·전골</a></li>
+							<li><a href="#">국</a></li>
+							<li><a href="#">탕</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">밑반찬</a>
+						<ul class="sub2">
+							<li><a href="#">마른반찬</a></li>
+							<li><a href="#">무침·볶음</a></li>
+							<li><a href="#">조림</a></li>
+							<li><a href="#">김치</a></li>
+							<li><a href="#">전·튀김</a></li>
+							<li><a href="#">장·젓갈</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">메인요리</a>
+						<ul class="sub3">
+							<li><a href="#">고기반찬</a></li>	
+							<li><a href="#">생선반찬</a></li>	
+							<li><a href="#">수제까스</a></li>	
+							<li><a href="#">한식</a></li>	
+							<li><a href="#">양식</a></li>	
+							<li><a href="#">일식·중식</a></li>	
+							<li><a href="#">분식</a></li>
+						</ul>	
+					</li>
+					<li>
+						<a href="#">아이반찬</a>
+						<ul class="sub4">
+							<li><a href="#">고기반찬</a></li>	
+							<li><a href="#">밑반찬</a></li>	
+							<li><a href="#">덮밥</a></li>	
+							<li><a href="#">간식</a></li>	
+						</ul>	
+					</li>
+					<li>
+						<a href="#">유제품</a>
+						<ul class="sub5">
+							<li><a href="#">발효유</a></li>	
+							<li><a href="#">우유</a></li>	
+							<li><a href="#">치즈</a></li>	
+						</ul>					
+					</li>
+					<li>
+						<a href="#">디저트</a>
+						<ul class="sub6">
+							<li><a href="#">식사빵</a></li>	
+							<li><a href="#">간식빵</a></li>	
+							<li><a href="#">케이크</a></li>	
+							<li><a href="#">커피</a></li>	
+							<li><a href="#">주스</a></li>	
+							<li><a href="#">기타간식</a></li>	
+						</ul>											
+					</li>
+					<li>
+						<a href="#">헬스푸드</a>
+						<ul class="sub7">
+							<li><a href="#">건강식품</a></li>	
+							<li><a href="#">홍삼</a></li>	
+						</ul>																	
+					</li>
+					<li>
+						<a href="#">주문後요리</a>
+						<ul class="sub8">
+							<li><a href="#">요리</a></li>	
+							<li><a href="#">반찬</a></li>	
+							<li><a href="#">김치</a></li>	
+						</ul>																	
+					</li>					
+				</ul>
+			</div><!-- id="gnb_wrap" -->
+			<p id="total_btn">
+				<a href="#"><img src="img/btn_all_menu.png" alt="전체메뉴" /></a>
+			</p>
+			<div id="total_menu">
+				<dl>
+					<dt>국·찌개</dt>
+					<dd>
+						<ul>
+							<li><a href="#">찌개·전골</a></li>
+							<li><a href="#">국</a></li>
+							<li><a href="#">탕</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>밑반찬</dt>
+					<dd>
+						<ul>
+							<li><a href="#">마른반찬</a></li>
+							<li><a href="#">무침·볶음</a></li>
+							<li><a href="#">조림</a></li>
+							<li><a href="#">김치</a></li>
+							<li><a href="#">전·튀김</a></li>
+							<li><a href="#">장·젓갈</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>메인요리</dt>
+					<dd>
+						<ul>
+							<li><a href="#">고기반찬</a></li>	
+							<li><a href="#">생선반찬</a></li>	
+							<li><a href="#">수제까스</a></li>	
+							<li><a href="#">한식</a></li>	
+							<li><a href="#">양식</a></li>	
+							<li><a href="#">일식·중식</a></li>	
+							<li><a href="#">분식</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>아이반찬</dt>
+					<dd>
+						<ul>
+							<li><a href="#">고기반찬</a></li>	
+							<li><a href="#">밑반찬</a></li>	
+							<li><a href="#">덮밥</a></li>	
+							<li><a href="#">간식</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>유제품</dt>
+					<dd>
+						<ul>
+							<li><a href="#">발효유</a></li>	
+							<li><a href="#">우유</a></li>	
+							<li><a href="#">치즈</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>디저트</dt>
+					<dd>
+						<ul>
+							<li><a href="#">식사빵</a></li>	
+							<li><a href="#">간식빵</a></li>	
+							<li><a href="#">케이크</a></li>	
+							<li><a href="#">커피</a></li>	
+							<li><a href="#">주스</a></li>	
+							<li><a href="#">기타간식</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>헬스푸드</dt>
+					<dd>
+						<ul>
+							<li><a href="#">건강식품</a></li>	
+							<li><a href="#">홍삼</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>주문後요리</dt>
+					<dd class="br0">
+						<ul>
+							<li><a href="#">요리</a></li>	
+							<li><a href="#">반찬</a></li>	
+							<li><a href="#">김치</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<p id="total_close"><a href="#"><img src="img/allmenu_close_btn1.png" alt="전체메뉴 닫기" /></a></p>
+			</div><!-- id="total_menu" -->
+		</div><!-- id="header" -->
+		<hr />
+		
+		<div id="visual">
+			<div id="mySwipe" class="swipe">
+				<ul class="touch_banner swipe-wrap">
+					<li><a href="#"><img src="img/visual01.png" alt="" /></a></li>
+					<li><a href="#"><img src="img/visual02.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/visual03.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/visual04.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/visual05.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/visual06.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/visual07.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+			<ul class="touch_bullet">
+				<li><img src="img/visual_bullet_on.png" class="active" alt="" /></li>
+				<li><img src="img/visual_bullet_off.png" alt="" /></li>
+				<li><img src="img/visual_bullet_off.png" alt="" /></li>
+				<li><img src="img/visual_bullet_off.png" alt="" /></li>
+				<li><img src="img/visual_bullet_off.png" alt="" /></li>
+				<li><img src="img/visual_bullet_off.png" alt="" /></li>
+				<li><img src="img/visual_bullet_off.png" alt="" /></li>
+			</ul>
+			<p class="touch_left_btn">
+				<a href="#"><img src="img/slide-left-button.png" alt="이전 배너" /></a>
+			</p>
+			<p class="touch_right_btn">
+				<a href="#"><img src="img/slide-right-button.png" alt="다음 배너" /></a>
+			</p>
+		</div><!-- id="visual" -->
+		<hr />
+		
+		<div id="contents">
+			<div id="best_goods">
+				<h2>
+					<span class="fs">베스트셀러</span>
+					<br />
+					후기가 증명하는 베스트 반찬
+				</h2>
+				<ul>
+					<li><a href="#tab1" class="bl tabOn">동남아 한상차림</a></li>
+					<li><a href="#tab2">풍성한 고기반찬</a></li>
+					<li><a href="#tab3">바다향가득 반찬</a></li>
+					<li><a href="#tab4">간편한 덮밥요리</a></li>
+					<li><a href="#tab5">할인특가 세트상품</a></li>
+					<li><a href="#tab6">맛있는 간식타임</a></li>
+				</ul>
+				<div class="panels">
+					<div class="panel cf" id="tab1">
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic1"></div>
+								</dt>
+								<dd>
+									<span class="tit">[집밥의 완성] 동남아 식탁세트</span><br />
+									넉넉한 이방인의 미소만큼이나 푸짐한 식탁<br />
+									<span class="price"><s>23,400</s>18,700원</span>
+								</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic2"></div>
+								</dt>
+								<dd>
+									<span class="tit">[애슐리투고] 분 보싸오 563g</span><br />
+									소고기 직화구이를 올린 베트남식 비빔면<br />
+									<span class="price"><s>8,900</s>7,560원</span>
+								</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic3"></div>
+								</dt>
+								<dd>
+									<span class="tit">[홈쿡] 타이 똠양 수프 270g</span><br />
+									집에서 간편하게 만나는 똠양 수프<br />
+									<span class="price"><s>3,500</s>3,150원</span>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="panel cf" id="tab2">
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic4"></div>
+								</dt>
+								<dd>
+									<span class="tit">[집밥의 완성] 뚝배기불고기 2인분 800g</span><br />
+									당면, 버섯까지 넣은 제대로된 뚝불<br />
+									<span class="price">11,200원</span>
+								</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic5"></div>
+								</dt>
+								<dd>
+									<span class="tit">[집반찬연구소] 한돈 제육볶음 650g</span><br />
+									쫄깃 매콤 맛있는 제육볶음<br />
+									<span class="price">9,800원</span>
+								</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic6"></div>
+								</dt>
+								<dd>
+									<span class="tit">[담미] 부추불고기 250g</span><br />
+									한우로 담백하게 맛 낸 고급스러운 부추 불고기<br />
+									<span class="price"><s>14,500</s>13,050원</span>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="panel cf" id="tab3">
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic7"></div>
+								</dt>
+								<dd>
+									<span class="tit">[쌜모네키친] 오로라 생연어 400g</span><br />
+									노르웨이에서 온 최상급 연어를 신선하게<br />
+									<span class="price">24,000원</span>
+								</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic8"></div>
+								</dt>
+								<dd>
+									<span class="tit">[집밥의완성] 삼치소금구이 250g</span><br />
+									도톰한 삼치구이에 풍미를 더하는 와사비장<br />
+									<span class="price">6,900원</span>
+								</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic9"></div>
+								</dt>
+								<dd>
+									<span class="tit">[청정한] 설악 오징어 순대 500g</span><br />
+									속초에서 먹던 맛 그대로<br />
+									<span class="price">8,500원</span>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="panel cf" id="tab4">
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic10"></div>
+								</dt>
+								<dd>
+									<span class="tit">[집밥의완성] 제육김치덮밥(소스) 350g</span><br />
+									실패할리 절대 없는 조합<br />
+									<span class="price"><s>3,900</s>3,300원</span>
+								</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic11"></div>
+								</dt>
+								<dd>
+									<span class="tit">[채움반찬] 소고기하이라이스 500g</span><br />
+									양송이가 쫄깃하게 씹히는<br />
+									<span class="price">7,000원</span>
+								</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic12"></div>
+								</dt>
+								<dd>
+									<span class="tit">[집밥의완성] 마파두부덮밥(소스) 350g</span><br />
+									담백한 두부의 변신은 무죄<br />
+									<span class="price">3,500원</span>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="panel cf" id="tab5">
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic13"></div>
+								</dt>
+								<dd>
+									<span class="tit">[집밥의 완성] 불없는요리 3종세트</span><br />
+									부엌까지 가기도 더운 당신을 위해<br />
+									<span class="price"><s>24,900</s>19,900원</span>
+								</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic14"></div>
+								</dt>
+								<dd>
+									<span class="tit">[집반찬연구소] 인기 국 세트 A</span><br />
+									한우 파육개장, 한우 쇠고기 미역국, 시래기 된장국<br />
+									<span class="price"><s>26,400</s>25,080원</span>
+								</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic15"></div>
+								</dt>
+								<dd>
+									<span class="tit">[집밥의완성] 국민반찬세트</span><br />
+									온 국민이 좋아하는 국민반찬들 다 모였어요~<br />
+									<span class="price"><s>20,300</s>13,900원</span>
+								</dd>
+							</dl>
+						</a>
+					</div>
+					<div class="panel cf" id="tab6">
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic16"></div>
+								</dt>
+								<dd>
+									<span class="tit">[진지브레드] 블루베리 식빵</span><br />
+									보라빛 블루베리로 반죽한 촉촉한 식빵<br />
+									<span class="price">3,700원</span>
+								</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic17"></div>
+								</dt>
+								<dd>
+									<span class="tit">[블렌드랩] 그린스무디 컬러팩 230ml 3병</span><br />
+									국내 최초 그린스무디 전문 브랜드<br />
+									<span class="price"><s>16,200</s>15,300원</span>
+								</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt class="img_box">
+									<div class="trans pic18"></div>
+								</dt>
+								<dd>
+									<span class="tit">[진지브레드] 녹차단팥빵</span><br />
+									국산 녹차로 품격을 살린 단팥빵<br />
+									<span class="price">2,800원</span>
+								</dd>
+							</dl>
+						</a>
+					</div>
+				</div>
+			</div><!-- id="best_goods" -->
+			<div id="contents_top">
+				<div id="roll_banner_wrap">
+					<h3>신상품</h3>
+					<dl>
+						<dt class="roll_btn1"><a href="#"><img src="img/pop_btn_1_over.png" alt="버튼1" /></a></dt>
+						<dd><a href="#"><img src="img/new_goods01.jpg" alt="배너1" /></a></dd>
+						<dt class="roll_btn2"><a href="#"><img src="img/pop_btn_2_out.png" alt="버튼2" /></a></dt>
+						<dd><a href="#"><img src="img/new_goods02.jpg" alt="배너2" /></a></dd>
+						<dt class="roll_btn3"><a href="#"><img src="img/pop_btn_3_out.png" alt="버튼3" /></a></dt>
+						<dd><a href="#"><img src="img/new_goods03.jpg" alt="배너3" /></a></dd>
+						<dt class="roll_btn4"><a href="#"><img src="img/pop_btn_4_out.png" alt="버튼4" /></a></dt>
+						<dd><a href="#"><img src="img/new_goods04.jpg" alt="배너4" /></a></dd>
+						<dt class="roll_btn5"><a href="#"><img src="img/pop_btn_5_out.png" alt="버튼5" /></a></dt>
+						<dd><a href="#"><img src="img/new_goods05.jpg" alt="배너5" /></a></dd>
+						<dt class="roll_btn6"><a href="#"><img src="img/pop_btn_6_out.png" alt="버튼6" /></a></dt>
+						<dd><a href="#"><img src="img/new_goods06.jpg" alt="배너6" /></a></dd>
+						<dt class="roll_btn7"><a href="#"><img src="img/pop_btn_7_out.png" alt="버튼7" /></a></dt>
+						<dd><a href="#"><img src="img/new_goods07.jpg" alt="배너7" /></a></dd>
+					</dl>
+					<p class="ctl_btn">
+						<a href="#" class="playBtn"><img src="img/pop_btn_play_on.gif" alt="재생 버튼" /></a>
+						<a href="#" class="stopBtn"><img src="img/pop_btn_stop_off.gif" alt="정지 버튼" /></a>
+					</p>
+				</div><!-- id="roll_banner_wrap" -->
+				<div id="event_wrap" class="fl">
+					<div id="brandVisual">
+						<ul>
+							<li class="visual_0"><a href="#">배너이미지1</a></li>
+							<li class="visual_1"><a href="#">배너이미지2</a></li>
+							<li class="visual_2"><a href="#">배너이미지3</a></li>
+						</ul>
+					</div>
+					<ul id="buttonList">
+						<li class="on"><a href="#">배너1</a></li>
+						<li><a href="#">배너2</a></li>
+						<li><a href="#">배너3</a></li>
+					</ul>
+				</div><!-- id="event_wrap" -->
+			</div><!-- id="contents_top" -->
+			
+			<a href="#"><div class="full_banner"></div></a>
+			
+			<div id="sidedish">
+				<h3>
+					<span class="fs">밑반찬</span>
+					<br />
+					<span class="normal">언제 먹어도 든든한</span> 밑반찬
+				</h3>
+				<div id="best_bg">
+					<ul>
+						<li><a href="#"><img src="img/side_dish01.jpg" alt="밑반찬1" width="235"/>
+							<p>
+								<span><strong>[담미] 견과류 바삭멸치볶음 70g</strong><br />
+								국산 잔멸치를 바삭하게 볶았어요.<br />
+								<span class="price"><s>23,400</s>18,700원</span>
+								</span>
+							</p>
+							<div class="circle_mask">&nbsp;</div>
+						</a></li>
+						<li><a href="#"><img src="img/side_dish02.jpg" alt="밑반찬2" width="235"/>
+							<p>
+								<span><strong>[담미] 자른 깻잎장아찌 100g</strong><br />
+								국산 깻잎을 옛날 절임 방식으로 2번 절였어요.<br />
+								<span class="price">6,500원</span>
+								</span>
+							</p>
+							<div class="circle_mask">&nbsp;</div>
+						</a></li>
+						<li><a href="#"><img src="img/side_dish03.jpg" alt="밑반찬3" width="235"/>
+							<p>
+								<span><strong>[집반찬연구소] 건호박볶음 120g</strong><br />
+								씹을수록 건강한 이 느낌!<br />
+								<span class="price">3,800원</span>
+								</span>
+							</p>
+							<div class="circle_mask">&nbsp;</div>
+						</a></li>
+						<li><a href="#"><img src="img/side_dish04.jpg" alt="밑반찬4" width="235"/>
+							<p>
+								<span><strong>[채움반찬] 깻잎장아찌 200g</strong><br />
+								깻잎의 싱그러운 향이 그대로!<br />
+								<span class="price">3,500원</span>
+								</span>
+							</p>
+							<div class="circle_mask">&nbsp;</div>
+						</a></li>
+						<li><a href="#"><img src="img/side_dish05.jpg" alt="밑반찬5" width="235"/>
+							<p>
+								<span><strong>[너의반찬] 깐새우장 500g</strong><br />
+								껍질 벗길 필요 없이 한입에 쏘옥<br />
+								<span class="price">23,000원</span>
+								</span>
+							</p>
+							<div class="circle_mask">&nbsp;</div>
+						</a></li>
+						<li><a href="#"><img src="img/side_dish06.jpg" alt="밑반찬6" width="235"/>
+							<p>
+								<span><strong>[집밥의완성] 메추리알고구마조림 220g</strong><br />
+								고소하면서도 달콤한 맛을 동시에<br />
+								<span class="price"><s>3,600</s>3,300원</span>
+								</span>
+							</p>
+							<div class="circle_mask">&nbsp;</div>
+						</a></li>
+						<li><a href="#"><img src="img/side_dish07.jpg" alt="밑반찬7" width="235"/>
+							<p>
+								<span><strong>[혼신마켓] 안동참마피클 200g</strong><br />
+								참마로 만들어 고급스러운 피클<br />
+								<span class="price">8,000원</span>
+								</span>
+							</p>
+							<div class="circle_mask">&nbsp;</div>
+						</a></li>
+						<li><a href="#"><img src="img/side_dish08.jpg" alt="밑반찬8" width="235"/>
+							<p>
+								<span><strong>[리쿡54] 오징어젓갈 150g</strong><br />
+								아빠 고객님들이 더 찾으시는 밥도둑<br />
+								<span class="price"><s>5,000</s>8,000원</span>
+								</span>
+							</p>
+							<div class="circle_mask">&nbsp;</div>
+						</a></li>
+					</ul>
+					<p class="prev_btn"><a href="#"><img src="img/slide-sub-left-button-black.png" alt="이전으로 이동" /></a></p>
+					<p class="next_btn"><a href="#"><img src="img/slide-sub-right-button-black.png" alt="다음으로 이동" /></a></p>
+				</div>				
+			</div><!-- id="sidedish" -->
+			
+			<div id="recipe">
+				<h3>
+					<span class="fs">레시피</span>
+					<br />
+					<span class="normal">누구나 쉽게 따라하는</span> 레시피
+				</h3>	
+				<div class="animation_canvas">
+					<div class="slider_panel">
+						<a href="#"><img src="img/recipe01.JPG" alt="" class="slider_image" /></a>
+						<a href="#"><img src="img/recipe02.JPG" alt="" class="slider_image" /></a>
+						<a href="#"><img src="img/recipe03.JPG" alt="" class="slider_image" /></a>
+						<a href="#"><img src="img/recipe04.JPG" alt="" class="slider_image cl" /></a>
+						<a href="#"><img src="img/recipe05.JPG" alt="" class="slider_image" /></a>
+					</div>
+					
+					<div class="control_panel">
+						<div class="control_button"></div>
+						<div class="control_button"></div>
+						<div class="control_button"></div>
+						<div class="control_button"></div>
+						<div class="control_button"></div>
+					</div>
+				</div> <!-- animation_canvas -->		
+				<div class="slider_text_panel">
+						<div class="slider_text">
+							<h2>레시피상품</h2>
+							<p class="line"></p>
+							<a href="#"><img src="img/r_goods01.jpg" width="198" /></a>
+							<p>[프루네티]레제로 프리미엄 엑스트라 버진 오일</p>
+							<p>32,900</p>
+						</div>
+						<div class="slider_text">
+							<h2>레시피상품</h2>
+							<p class="line"></p>
+							<a href="#"><img src="img/r_goods02.jpg" width="198" /></a>
+							<p>[크림치즈]마담로익 4종</p>
+							<p>11,900원</p>
+						</div>
+						<div class="slider_text">
+							<h2>레시피상품</h2>
+							<p class="line"></p>
+							<a href="#"><img src="img/r_goods03.jpg" width="198" /></a>
+							<p>[데체코]엑스트라버진 올리브 오일</p>
+							<p>10,800원</p>
+						</div>
+						<div class="slider_text">
+							<h2>레시피상품</h2>
+							<p class="line"></p>
+							<a href="#"><img src="img/r_goods04.jpg" width="198" /></a>
+							<p>[선솔트] 머레이리버 고메 핑크솔트</p>
+							<p>18,800원</p>
+						</div>
+						<div class="slider_text">
+							<h2>레시피상품</h2>
+							<p class="line"></p>
+							<a href="#"><img src="img/r_goods05.jpg" width="198" /></a>
+							<p>[소프트] 카망베르 치즈 2종</p>
+							<p>14,900원</p>
+						</div>					
+				</div><!-- class="slider_text_panel"> -->
+			</div><!-- id="recipe" -->
+			
+			<div id="contents_bottom">
+				<div id="map_wrap">
+					<h3>오시는 길</h3>
+					<div id="map-canvas" title="찾아오시는 길"></div>
+				</div><!-- id="map_wrap" -->
+				<div id="online_wrap">
+					<h3>Eats on Loves</h3>
+					<p>| Partners</p>
+					<ul>
+						<li class="fl"><a href="#"><img src="img/online_banner01.jpg" alt="배너1" title="커피리브레" /></a></li>
+						<li class="fl"><a href="#"><img src="img/online_banner02.jpg" alt="배너2" title="비스테카" /></a></li>
+						
+						<li class="fl"><a href="#"><img src="img/online_banner03.png" alt="배너3" title="오뗄두스"/></a></li>
+						<li class="clear"><a href="#"><img src="img/online_banner04.png" alt="배너4"title="콜린스그린" /></a></li>
+						
+						<li class="fl"><a href="#"><img src="img/online_banner05.jpg" alt="배너5" title="르까도드마비"/></a></li>
+						<li class="fl"><a href="#"><img src="img/online_banner06.png" alt="배너6"title="본앤브레드" /></a></li>
+					</ul>
+				</div><!-- id="online_wrap" -->
+
+			</div><!-- id="contents_bottom" -->
+			
+			<div id="quick_menu">
+				<h3>QUICK</h3>
+				<ul>
+					<li><a href="#"><div class="quick1"></div>정기주문</a></li>
+					<li><a href="#"><div class="quick2"></div>장바구니</a></a></li>
+					<li><a href="#"><div class="quick3"></div>이벤트</a></li>
+					<li><a href="#"><div class="quick4"></div>고객센터</a></li>
+					<li class="last">
+						<a href="#top" class="fl qucik_btn"><img src="img/quick_up.png" alt="위로" /></a>
+						<a href="#footer_wrap"class="fl qucik_btn"><img src="img/quick_down.png" alt="아래로" /></a>
+					</li>
+				</ul>
+			</div><!-- id="quick_menu" -->
+			<p id="pop_wrap">
+				<img src="img/popup.png" alt="한정이벤트 고추장찌개" usemap="#pop" />
+				<map name="pop" id="pop">
+					<area shape="rect" coords="322,397,359,413" href="#" alt="창닫기" />
+					<area shape="rect" coords="161,396,289,418" href="#" alt="하루동안 창 닫기" />
+				</map>
+			</p>	
+		</div><!-- id="contents" -->
+	</div><!-- id="wrap" -->
+	<div id="footer_wrap">
+		<div class="footer_menu">
+			<div class="inner">
+				<ul>
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#" class="color">개인정보취급방침</a></li>
+					<li><a href="#">야쿠르트 아줌마 모집</a></li>
+					<li><a href="#" class="b0">야쿠르트 채용</a></li>
+				</ul>
+				<div class="link">
+					<div class="familysite">
+						<ul>
+							<p>FAMILY SITE</p>
+							<span>열기</span>
+							<li><a href="#">야쿠르트 인재개발원</a></li>
+							<li><a href="#">팔도</a></li>
+							<li><a href="#">능률 교육</a></li>
+							<li><a href="#">비락</a></li>
+							<li><a href="#">코코브루니</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</div><!-- class="footer_menu" -->
+		<div class="inner_footer">
+			<div class="logo">
+				<a href="#"><img src="img/footer_logo.png" alt="잇츠온" /></a>
+			</div>
+			<address>
+				<div class="address">
+					<ul class="ad01">
+						<li><span>대표이사</span>고정완</li>
+						<li><span>주소</span>서울특별시 서초구 강남대로</li>
+						<li><span>고객센터</span>1577-3651</li>
+						<li><span>사업자 등록번호</span>114-81-70065</li>
+					</ul>
+					<ul class="ad02">
+						<li><span>통신판매업신고번호</span>제2004-서울서초-04175<a href="#" class="btn">사업자정보확인</a></li>
+						<li><span>방문판매업신고번호</span>제2010-서울서초-0140호</li>
+						<li><span>부가통신사업신고</span>02201</li>
+						<li class="ad03"><span>개인정보관리 및 청소년보호 책임자</span>강동완</li>
+					</ul>
+				</div><!-- class="address" -->
+				<div class="consumer">
+					<p class="tit">
+						소비자피해보상보험
+						<img src="img/footer_logo_sgi.png" alt="sgi서울보증" />
+					</p>
+					<p class="txt">
+						고객님은 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한<br />구매안전 서비스를 이용하실 수 있습니다.<br />(보상대상:미배송,반품/환불거부,쇼핑몰 부도)
+					</p>
+				</div><!-- class="consumer" -->
+			</address>
+			<div class="copyrights">
+				<div class="co01">
+					<p>Copyright © 2017 KOREA YAKULT CO.LTD</p>
+					<p>All Rights Reserved.</p>
+				</div>
+				<ul class="co02">
+					<li class="mr">
+						<img src="img/footer_ncsi.gif" alt="ncsi" />
+						<p>
+							국가고객만족도<br />19년 연속 1위 (우유/발효유)
+						</p>
+					</li>
+					<li>
+						<img src="img/footer_logo_ccm.gif" alt="ccm" />
+						<p>
+							 소비자중심경영<br />
+							 (CCM)인증획득
+						</p>
+					</li>
+				</ul>
+				<ul class="sns">
+					<li class="sns01"></li>
+					<li class="sns02"></li>
+					<li class="sns03"></li>
+					<li class="sns04"></li>
+				</ul>
+			</div>
+		</div>
+	</div><!-- id="footer_wrap" -->
+</body>
+</html>
