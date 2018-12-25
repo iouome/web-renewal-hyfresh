@@ -37,104 +37,92 @@
 			</div>
 		</div>
 		<div id="header">
-			<h1><a href="#"><img src="img/logo.png" alt="잇츠온" /></a></h1>
-			<dl id="util_menu">
-				<dt class="hide">유틸메뉴</dt>
-				<dd class="appDownload fl">
-					<ul>
-						<li><a href="#">잇츠온 앱 다운로드 ▼</a></li>
-					</ul>
-				</dd>
-				<!-- <dd class="clickme fl DB_etc10_1" style="width: 128px;"><img src="img/login_click.png"/></dd> -->
-				<dd class="util_first">
-					<ul>
-						<li class="login_wrap logtxt"><a href="#">로그인</a>
-							<form action="#" method="post" name="log_f" id="login_f">
-								<fieldset>
-									<legend>로그인</legend>
-									<p class="user_id">
-										<label for="user_id">
-											<img src="img/login_title_id.gif" alt="아이디" />
-										</label>
-										<input type="text" name="user_id" id="user_id"/>
-									</p>
-									<p class="user_pw">
-										<label for="user_pw">
-											<img src="img/login_title_pw.gif" alt="패드워드" />
-										</label>
-										<input type="password" name="user_pw" id="user_pw"/>
-									</p>
-									<p>
-										<input type="checkbox" name="save_id" id="save_id"/>
-										<label for="save_id">비밀번호 저장</label>
-									</p>
-									<p class="log_btn">
-										<input type="image" src="img/login_btn.png" alt="로그인버튼" />
-									</p>
-									<p class="join_btn_wrap">
-										<a href="#">회원가입</a>
-										<a href="#" class="sch_id_btn">아이디/비밀번호찾기</a>
-									</p>
-									<p class="login_close_btn">
-										<a href="#"><img src="img/login_close_btn.png" alt="닫기버튼" /></a>
-									</p>
-								</fieldset>
-							</form>						
-						</li>
-						<li class="logtxt"><a href="#">|&nbsp;&nbsp;&nbsp;회원가입</a></li>
-					</ul>
-				</dd>
-				<dd class="mypage fl">
-					<ul>
-						<li><a href="#">|&nbsp;&nbsp;&nbsp;마이페이지 ▼</a></li>
-					</ul>
-				</dd>
-				<dd class="info fl">
-					<ul>
-						<li><a href="#">|&nbsp;&nbsp;&nbsp;고객센터 ▼</a></li>
-					</ul>
-				</dd>
-				<dd>
-					<a href="#">|&nbsp;&nbsp;&nbsp;멤버십몰</a>
-				</dd>
-				<dd>
-					<a href="#">|&nbsp;&nbsp;&nbsp;빠른제품신청</a>
-				</dd>
-				<dd>
-					<a href="#">|&nbsp;&nbsp;&nbsp;장바구니</a>
-				</dd>
-				<dd class="pt">
-					<ul id="zoom">
-						<li><img src="img/util_zoom_1.gif" alt="" /></li>
-						<li><a href="#" class="zoom_in"><img src="img/util_zoom_2.gif" alt="" /></a></li>
-						<li><a href="#" class="zoom_in"><img src="img/util_zoom_3.gif" alt="" /></a></li>
-						<li><a href="#" class="zoom_out"><img src="img/util_zoom_4.gif" alt="" /></a></li>
-					</ul>
-				</dd>
-				<dd class="pt">
-					<a href="#" class="print_btn"><img src="img/util_print.gif" alt="" /></a>
-				</dd>
-				<dd class="pt">
-	<div id="google_translate_element"></div><script type="text/javascript">
-	function googleTranslateElementInit() {
-	  new google.translate.TranslateElement({pageLanguage: 'ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-	}
-	</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>		
-				</dd>
-			</dl>
 			<div class="util_border"></div>
-			<form action="#" method="get" name="sch_f" id="sch_f">
-				<fieldset>
-					<legend>검색폼</legend>
-					<p>
-						<input type="text" name="keyword" id="keyword" title="검색어입력" />
-						<input type="image" src="img/search-button.png" alt="검색" class="sch_btn"/>
-					</p>
-				</fieldset>
-			</form>
-			<div class="right_banner">
-				<a href="#"><img src="img/main_slogan_eatson.gif" alt="잇츠온 주문배송 가능지역" /></a>
-				<a href="#"><img src="img/banner01.jpg" alt="이유식" /></a>
+			<div id="util_menu">
+				<div class="util_menu_in">
+					<span class="hide">유틸메뉴</span>
+					<div class="left">
+						<a href="#">잇츠온 앱 다운로드 ▼</a>
+					</div>
+					<div class="right">
+						<ul>
+							<li class="login_wrap logtxt">
+								<a href="#">로그인</a>
+								<form action="#" method="post" name="log_f" id="login_f">
+									<fieldset>
+										<legend>로그인</legend>
+										<p class="user_id">
+											<label for="user_id">
+												<img src="img/login_title_id.gif" alt="아이디" />
+											</label>
+											<input type="text" name="user_id" id="user_id"/>
+										</p>
+										<p class="user_pw">
+											<label for="user_pw">
+												<img src="img/login_title_pw.gif" alt="패드워드" />
+											</label>
+											<input type="password" name="user_pw" id="user_pw"/>
+										</p>
+										<p>
+											<input type="checkbox" name="save_id" id="save_id"/>
+											<label for="save_id">비밀번호 저장</label>
+										</p>
+										<p class="log_btn">
+											<input type="image" src="img/login_btn.png" alt="로그인버튼" />
+										</p>
+										<p class="join_btn_wrap">
+											<a href="#">회원가입</a>
+											<a href="#" class="sch_id_btn">아이디/비밀번호찾기</a>
+										</p>
+										<p class="login_close_btn">
+											<a href="#"><img src="img/login_close_btn.png" alt="닫기버튼" /></a>
+										</p>
+									</fieldset>
+								</form>
+							</li>
+							<li class="logtxt"><a href="#">|&nbsp;&nbsp;&nbsp;회원가입</a></li>
+							<li><a href="#">|&nbsp;&nbsp;&nbsp;마이페이지 ▼</a></li>
+							<li><a href="#">|&nbsp;&nbsp;&nbsp;고객센터 ▼</a></li>
+							<li><a href="#">|&nbsp;&nbsp;&nbsp;멤버십몰</a></li>
+							<li><a href="#">|&nbsp;&nbsp;&nbsp;빠른제품신청</a></li>
+							<li><a href="#">|&nbsp;&nbsp;&nbsp;장바구니</a></li>
+							<li class="pt">
+								<ul id="zoom">
+									<li><img src="img/util_zoom_1.gif" alt="" /></li>
+									<li><a href="#" class="zoom_in"><img src="img/util_zoom_2.gif" alt="" /></a></li>
+									<li><a href="#" class="zoom_in"><img src="img/util_zoom_3.gif" alt="" /></a></li>
+									<li><a href="#" class="zoom_out"><img src="img/util_zoom_4.gif" alt="" /></a></li>
+								</ul>
+							</li>
+							<li class="pt">
+								<a href="#" class="print_btn"><img src="img/util_print.gif" alt="" /></a>
+							</li>
+							<li class="pt">
+								<div id="google_translate_element"></div><script type="text/javascript">
+								function googleTranslateElementInit() {
+								  new google.translate.TranslateElement({pageLanguage: 'ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+								}
+								</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>		
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header_in">
+				<h1><a href="#"><img src="img/logo.png" alt="잇츠온" /></a></h1>
+				<form action="#" method="get" name="sch_f" id="sch_f">
+					<fieldset>
+						<legend>검색폼</legend>
+						<p>
+							<input type="text" name="keyword" id="keyword" title="검색어입력" />
+							<input type="image" src="img/search-button.png" alt="검색" class="sch_btn"/>
+						</p>
+					</fieldset>
+				</form>
+				<div class="right_banner">
+					<a href="#"><img src="img/main_slogan_eatson.gif" alt="잇츠온 주문배송 가능지역" /></a>
+					<a href="#"><img src="img/banner01.jpg" alt="이유식" /></a>
+				</div>
 			</div>
 			<div id="gnb_wrap">
 				<ul id="gnb">
@@ -385,7 +373,7 @@
 							</dl>
 						</a>
 						<a href="#">
-							<dl>
+							<dl class="mr">
 								<dt class="img_box">
 									<div class="trans pic3"></div>
 								</dt>
@@ -423,7 +411,7 @@
 							</dl>
 						</a>
 						<a href="#">
-							<dl>
+							<dl class="mr">
 								<dt class="img_box">
 									<div class="trans pic6"></div>
 								</dt>
@@ -461,7 +449,7 @@
 							</dl>
 						</a>
 						<a href="#">
-							<dl>
+							<dl class="mr">
 								<dt class="img_box">
 									<div class="trans pic9"></div>
 								</dt>
@@ -499,7 +487,7 @@
 							</dl>
 						</a>
 						<a href="#">
-							<dl>
+							<dl class="mr">
 								<dt class="img_box">
 									<div class="trans pic12"></div>
 								</dt>
@@ -537,7 +525,7 @@
 							</dl>
 						</a>
 						<a href="#">
-							<dl>
+							<dl class="mr">
 								<dt class="img_box">
 									<div class="trans pic15"></div>
 								</dt>
@@ -575,7 +563,7 @@
 							</dl>
 						</a>
 						<a href="#">
-							<dl>
+							<dl class="mr">
 								<dt class="img_box">
 									<div class="trans pic18"></div>
 								</dt>
